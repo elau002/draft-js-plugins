@@ -23,8 +23,6 @@ export default class Toolbar extends React.Component {
   state = {
     isVisible: false,
     position: undefined,
-    // detect max width from user viewport
-    windowWidth: undefined,
     /**
      * If this is set, the toolbar will render this instead of the regular
      * structure and will also be shown when the editor loses focus.
@@ -40,8 +38,6 @@ export default class Toolbar extends React.Component {
   componentWillUnmount() {
     this.props.store.unsubscribeFromItem('selection', this.onSelectionChanged);
   }
-
-  // update current window width
 
   /**
    * This can be called by a child in order to render custom content instead
